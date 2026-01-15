@@ -1,0 +1,64 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |
+        npm install
+        npx webpack
+private void launchAuthTab() {
+    AuthTabIntent authTabIntent = new AuthTabIntent.Builder.build();
+    authTabIntent.launch(mLauncher, Uri.parse("https://www.example.com/auth"), "mycustomscheme");
+}
+
+private void launchAuthTabHttps() {
+    String host = "your_host";
+    String path = "your_path";
+    AuthTabIntent authTabIntent = new AuthTabIntent.Builder.build();
+    authTabIntent.launch(mLauncher, Uri.parse("https://www.example.com/auth", host, path);
+}
+// In your activity
+
+private final ActivityResultLauncher<Intent> mLauncher =
+    AuthTabIntent.registerActivityResultLauncher(this, this::handleAuthResult);
+
+private void handleAuthResult(AuthResult result) {
+    String message = switch (result.resultCode) {
+        case AuthTabIntent.RESULT_OK -> "Received auth result.";
+        case AuthTabIntent.RESULT_CANCELED -> "AuthTab canceled.";
+        case AuthTabIntent.RESULT_VERIFICATION_FAILED -> "Verification failed.";
+        case AuthTabIntent.RESULT_VERIFICATION_TIMED_OUT -> "Verification timed out.";
+    }
+
+    if (result.resultCode == AuthTabIntent.RESULT_OK) {
+        message += " Uri: " + result.resultUri;
+    }
+
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show();  
+}
+dependencies {
+    implementation 'androidx.browser:browser:1.9.0'
+}
+https://developers.google.com/tag-platform/security/guides/app-consent?platform=android&hl=fa&consentmode=advanced#verify_consent_settings
+
+
